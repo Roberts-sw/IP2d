@@ -14,21 +14,18 @@
        | 5  | 10 |
     ---+----+----+
      2 | 14 | 21 |
-     4 | 8  |  6 |
     ---+----+----+
     
     In het geheugen zou deze als volgt staan:
-    {5, 10, 0, 14, 21, 2, 8, 6, 4, 0}, te lezen als:
-    kolommen K=3, waarvan 1 als rijkoppen
-    rijkoppen 2+3R 2 en 4, daarna eindigt tabel 
-
+    {5, 10, 0, 14, 21, 2, 0}, te lezen als:
+		kolommen K=3 (0 op index K-1), waarvan 1 voor rijkoppen
+		rijen R=2 (0 op index R*K), waarvan 1 voor kolomkoppen
 
     Interpolatie wordt gedaan door:
     1. het aantal kolommen te bepalen
     2. in de rijen te interpoleren
     3. yx2z: in de kolommen te interpoleren en gegevenswaarde te bepalen
        yz2x: in de gegevens te interpoleren en de kolomwaarde te bepalen
-        .c De tabel wordt afgesloten met een 0.
    ---------------------------------------------------------------------- */
 #ifndef IP2D_H_
 #define IP2D_H_
